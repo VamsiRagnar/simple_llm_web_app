@@ -1,4 +1,4 @@
-from langchain.chat_models import openai
+from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.sequential import SequentialChain
 from langchain.chains.llm import LLMChain
@@ -6,7 +6,7 @@ from keys import openapi_key
 import os
 os.environ['OPENAI_API_KEY'] = openapi_key
 
-llm = openai(model_name="gpt-3.5-turbo-instruct",temperature=0.5)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo-instruct",temperature=0.5)
 
 def generate_player_names(year: str,sport:str,nationality:str) -> list[str]:
    
